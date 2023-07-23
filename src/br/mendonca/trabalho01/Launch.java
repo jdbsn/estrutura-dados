@@ -16,11 +16,33 @@ public class Launch {
 	  
 	  System.out.println(estrutura.print());
 	  
+	  JoaoNetoTAD x = new JoaoNetoTAD();
+	  System.out.println(x.print());
+	  estrutura.inserirNoMeio(x, 1);
+	  
 	  System.out.println("--------------------------------------------------");
-	  
-	  estrutura.inserirNoInicio(new JoaoNetoTAD());
-	  
 	  System.out.println(estrutura.print());
+	  
+	  estrutura.excluirNoMeio(2);
+	  System.out.println("--------------------------------------------------");
+      System.out.println(estrutura.print());
+      System.out.println(estrutura.getQuantidade());
+	  
+//	  
+//	  estrutura.inserirNoInicio(new JoaoNetoTAD());
+//	  
+//	  System.out.println(estrutura.print());
+//	  
+//	  System.out.println("--------------------------------------------------");
+//	  
+//	  estrutura.excluirNoInicio();
+//	  estrutura.excluirNoFim();
+//	  
+//	  System.out.println(estrutura.print());
+//	  
+//	  System.out.println(estrutura.getQuantidade());
+	  
+	  
 	  
 //	  int quantidade = 4;
 //	  int lista[] = new int[5];

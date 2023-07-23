@@ -6,14 +6,15 @@ import br.mendonca.trabalho01.ITAD;
 public class JoaoNetoTAD implements ITAD {
 
   private String nome;
-  private double espessuraFolha;
+  private double comprimentoGalho;
   private boolean epifita;
   
   public JoaoNetoTAD() {
+    
     String[] nomes = {"Ansellia", "Calypso", "Eulophia", "Ophrys", "Phalaenopsis", "Satyrium"};
     Random random = new Random();
     this.nome = nomes[random.nextInt(5)] + " " + nomes[random.nextInt(5)] + " " + nomes[random.nextInt(5)];
-    this.espessuraFolha = random.nextDouble(1);
+    this.comprimentoGalho =random.nextDouble(10);
     this.epifita = random.nextBoolean();
   }
 
@@ -29,12 +30,12 @@ public class JoaoNetoTAD implements ITAD {
 
   @Override
   public double getDouble() {
-    return espessuraFolha;
+    return comprimentoGalho;
   }
 
   @Override
   public void setDouble(double value) {
-    this.espessuraFolha = value;
+    this.comprimentoGalho = value;
   }
 
   @Override
@@ -49,7 +50,8 @@ public class JoaoNetoTAD implements ITAD {
 
   @Override
   public String print() {
-    return "Nome: " + nome + "\n" + "Espessura da Folha: " + espessuraFolha + " cm\n" + "Epifita? " + (isBoolean() ? "Sim" : "Não");
+    return "Nome: " + nome + " | " + "Comprimento Galho: " + comprimentoGalho 
+        + " cm | " + "Epifita? " + (isBoolean() ? "Sim" : "Não");
   }
 
 }

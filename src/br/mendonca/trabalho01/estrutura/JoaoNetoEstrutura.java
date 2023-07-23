@@ -8,7 +8,7 @@ public class JoaoNetoEstrutura implements ITrabalho01 {
   private ITAD[] lista;
   private int quantidade = 0;
   private int maximo;
-  
+
   public JoaoNetoEstrutura(int maximo) {
     this.lista = new ITAD[maximo];
     this.maximo = maximo;
@@ -31,6 +31,7 @@ public class JoaoNetoEstrutura implements ITrabalho01 {
     for(int i = quantidade; i > 0 ; i--) {
       lista[i] = lista[i - 1];
     }
+    
     lista[0] = tad;
     quantidade++;
   }
@@ -47,24 +48,42 @@ public class JoaoNetoEstrutura implements ITrabalho01 {
   public void inserirNoMeio(ITAD tad, int posicao) {
     if (quantidade + 1 > maximo) return;
     if (posicao < 0 || posicao > quantidade) return;
-//    1,2,3,4 ==== 4
+    
+    for (int i = quantidade; i >= quantidade - posicao; i--) {
+      lista[i] = lista[i-1];
+    }
+    
+    lista[posicao] = tad;
+    quantidade++;
   }
-
+  
   @Override
   public void excluirNoFim() {
-    // TODO Auto-generated method stub
+    lista[quantidade] = null;
+    quantidade--;
   }
 
   @Override
   public void excluirNoInicio() {
-    // TODO Auto-generated method stub
-
+    for (int i = 0; i < quantidade - 1; i++) {
+      lista[i] = lista[i + 1];
+    }
+    
+    lista[quantidade] = null;
+    quantidade--;
   }
 
   @Override
   public void excluirNoMeio(int posicao) {
-    // TODO Auto-generated method stub
+    if (posicao < 0 || posicao > quantidade) return;
 
+    for (int i = posicao; i < quantidade - 1; i++) {
+      lista[i] = lista[i+1];
+      
+    }
+    
+    lista[quantidade] = null;
+    quantidade--;
   }
 
   @Override
@@ -75,10 +94,12 @@ public class JoaoNetoEstrutura implements ITrabalho01 {
   @Override
   public String print() {
     String texto = "";
+    
     for (int i = 0; i < quantidade; i++) {
       texto += i + 1 + ". \n";
       texto += lista[i].print() + "\n\n";
     }
+    
     return texto;
   }
 
