@@ -28,6 +28,8 @@ public class Launch {
       System.out.println(estrutura.print());
       System.out.println(estrutura.getQuantidade());
 	  
+      System.out.println(estrutura.getItem(1).print());
+      
 //	  
 //	  estrutura.inserirNoInicio(new JoaoNetoTAD());
 //	  

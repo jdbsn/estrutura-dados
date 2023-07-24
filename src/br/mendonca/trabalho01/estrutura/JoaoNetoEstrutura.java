@@ -88,19 +88,20 @@ public class JoaoNetoEstrutura implements ITrabalho01 {
 
   @Override
   public ITAD getItem(int posicao) {
+    // TODO Checar esse retorno null
+    if (posicao < 0 || posicao > quantidade) return null;
     return lista[posicao];
   }
 
   @Override
   public String print() {
-    String texto = "";
+    StringBuilder texto = new StringBuilder();
     
     for (int i = 0; i < quantidade; i++) {
-      texto += i + 1 + ". \n";
-      texto += lista[i].print() + "\n\n";
+      texto.append("\n" + (i + 1) + ". " + lista[i].print());
     }
     
-    return texto;
+    return texto.toString();
   }
 
 }
