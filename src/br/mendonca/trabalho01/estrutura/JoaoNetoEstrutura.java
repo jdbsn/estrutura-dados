@@ -6,12 +6,13 @@ import br.mendonca.trabalho01.ITrabalho01;
 public class JoaoNetoEstrutura implements ITrabalho01 {
 
   private ITAD[] lista;
-  private int quantidade = 0;
+  private int quantidade;
   private int maximo;
 
   public JoaoNetoEstrutura(int maximo) {
     this.lista = new ITAD[maximo];
     this.maximo = maximo;
+    this.quantidade = 0;
   }
 
   @Override
@@ -47,9 +48,9 @@ public class JoaoNetoEstrutura implements ITrabalho01 {
   @Override
   public void inserirNoMeio(ITAD tad, int posicao) {
     if (quantidade + 1 > maximo) return;
-    if (posicao < 0 || posicao > quantidade) return;
-    
-    for (int i = quantidade; i >= quantidade - posicao; i--) {
+    if (posicao < 1 || posicao > quantidade - 1) return;
+
+    for (int i = quantidade; i > posicao; i--) {
       lista[i] = lista[i-1];
     }
     
@@ -75,11 +76,10 @@ public class JoaoNetoEstrutura implements ITrabalho01 {
 
   @Override
   public void excluirNoMeio(int posicao) {
-    if (posicao < 0 || posicao > quantidade) return;
+    if (posicao < 1 || posicao > quantidade - 2) return;
 
     for (int i = posicao; i < quantidade - 1; i++) {
       lista[i] = lista[i+1];
-      
     }
     
     lista[quantidade] = null;
@@ -88,8 +88,8 @@ public class JoaoNetoEstrutura implements ITrabalho01 {
 
   @Override
   public ITAD getItem(int posicao) {
-    // TODO Checar esse retorno null
     if (posicao < 0 || posicao > quantidade) return null;
+    
     return lista[posicao];
   }
 
@@ -98,7 +98,7 @@ public class JoaoNetoEstrutura implements ITrabalho01 {
     StringBuilder texto = new StringBuilder();
     
     for (int i = 0; i < quantidade; i++) {
-      texto.append("\n" + (i + 1) + ". " + lista[i].print());
+      texto.append("\n[" + (i + 1) + "] " + lista[i].print());
     }
     
     return texto.toString();

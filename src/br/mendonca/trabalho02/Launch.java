@@ -48,7 +48,6 @@ public class Launch {
 		System.out.println("Início - " + listaDinamica.getInicio().getItad().print());
 		System.out.println("Quantidade: " + listaDinamica.getQuantidade());
 		
-		
 		System.out.println("---------------------------------------------------------------");
 		JoaoNetoTAD jntad6 = new JoaoNetoTAD();
 		listaDinamica.inserirNoMeio(jntad6, 3);

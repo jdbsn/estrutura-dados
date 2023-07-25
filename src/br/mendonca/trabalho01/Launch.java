@@ -10,27 +10,33 @@ public class Launch {
 	  JoaoNetoTAD jntad;
 	  JoaoNetoEstrutura estrutura = new JoaoNetoEstrutura(10);
 	  
-	  for(int i = 0; i < 3; i++) {
-	    estrutura.inserirNoFim(new JoaoNetoTAD());
+	  for(int i = 0; i < 5; i++) {
+	    jntad = new JoaoNetoTAD();
+	    System.out.println(jntad.print());
+	    estrutura.inserirNoFim(jntad);
 	  }
 	  
 	  System.out.println(estrutura.print());
 	  
-	  JoaoNetoTAD x = new JoaoNetoTAD();
-	  System.out.println(x.print());
-	  estrutura.inserirNoMeio(x, 1);
+	  for(int i = 0; i < 5; i++) {
+      }
+
 	  
-	  System.out.println("--------------------------------------------------");
-	  System.out.println(estrutura.print());
 	  
-	  estrutura.excluirNoMeio(2);
-	  System.out.println("--------------------------------------------------");
-      System.out.println(estrutura.print());
-      System.out.println(estrutura.getQuantidade());
-	  
-      System.out.println(estrutura.getItem(1).print());
-      
+//	  JoaoNetoTAD x = new JoaoNetoTAD();
+//	  System.out.println(x.print());
+//	  estrutura.inserirNoMeio(x, 1);
 //	  
+//	  System.out.println("--------------------------------------------------");
+//	  System.out.println(estrutura.print());
+//	  
+//	  estrutura.excluirNoMeio(2);
+//	  System.out.println("--------------------------------------------------");
+//      System.out.println(estrutura.print());
+//      System.out.println(estrutura.getQuantidade());
+//	  
+//      System.out.println(estrutura.getItem(1).print());
+//      
 //	  estrutura.inserirNoInicio(new JoaoNetoTAD());
 //	  
 //	  System.out.println(estrutura.print());
@@ -42,9 +48,7 @@ public class Launch {
 //	  
 //	  System.out.println(estrutura.print());
 //	  
-//	  System.out.println(estrutura.getQuantidade());
-	  
-	  
+//	  System.out.println("Quantidade: " + estrutura.getQuantidade());	  
 	  
 //	  int quantidade = 4;
 //	  int lista[] = new int[5];
@@ -62,6 +66,7 @@ public class Launch {
 //	    System.out.println(lista[i]);
 //        
 //      }
+
 	  
 	}
 
