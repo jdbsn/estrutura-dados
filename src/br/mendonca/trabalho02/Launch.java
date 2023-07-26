@@ -1,7 +1,7 @@
 package br.mendonca.trabalho02;
 
-import br.mendonca.trabalho01.tads.JoaoNetoTAD;
 import br.mendonca.trabalho02.estruturas.JoaoNetoEstrutura;
+import br.mendonca.trabalho02.tads.JoaoNetoTAD;
 
 public class Launch {
 

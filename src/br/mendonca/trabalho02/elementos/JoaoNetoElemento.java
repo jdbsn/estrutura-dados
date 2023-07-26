@@ -1,6 +1,6 @@
 package br.mendonca.trabalho02.elementos;
 
-import br.mendonca.trabalho01.ITAD;
+import br.mendonca.trabalho02.ITAD;
 
 public class JoaoNetoElemento {
 

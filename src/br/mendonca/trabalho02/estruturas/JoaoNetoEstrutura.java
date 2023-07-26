@@ -1,13 +1,14 @@
 package br.mendonca.trabalho02.estruturas;
 
-import br.mendonca.trabalho01.ITAD;
-import br.mendonca.trabalho01.ITrabalho01;
+
+import br.mendonca.trabalho02.ITAD;
+import br.mendonca.trabalho02.ITrabalho02;
 import br.mendonca.trabalho02.elementos.JoaoNetoElemento;
 
-public class JoaoNetoEstrutura implements ITrabalho01 {
+public class JoaoNetoEstrutura implements ITrabalho02 {
   
   private JoaoNetoElemento inicio;
-  private int quantidade;
+  private int quantidade = 0;
   
   public JoaoNetoElemento getInicio() {
     return this.inicio;
