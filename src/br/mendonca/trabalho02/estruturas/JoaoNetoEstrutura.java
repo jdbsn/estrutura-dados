@@ -51,7 +51,7 @@ public class JoaoNetoEstrutura implements ITrabalho01 {
 
   @Override
   public void inserirNoMeio(ITAD tad, int posicao) {
-    if (posicao < 0 || posicao > quantidade) return;
+    if (posicao < 1 || posicao > quantidade) return;
     
     JoaoNetoElemento elemento = new JoaoNetoElemento(tad);
     JoaoNetoElemento atual = inicio;
@@ -69,21 +69,29 @@ public class JoaoNetoEstrutura implements ITrabalho01 {
 
   @Override
   public void excluirNoFim() {
+    if (inicio == null) return;
+    
     JoaoNetoElemento anterior = inicio;
     JoaoNetoElemento atual = inicio;
     
-    while(atual.getNext() != null) {
-      anterior = atual;
-      atual = atual.getNext();
+    if (inicio.getNext() == null) {
+      inicio = null;
+    } else {
+      while(atual.getNext() != null) {
+        anterior = atual;
+        atual = atual.getNext();
+      }
+      
+      anterior.setNext(null);
     }
-    
-    anterior.setNext(null);
-
+      
     quantidade--;
   }
 
   @Override
   public void excluirNoInicio() {
+    if (inicio == null) return;
+    
     JoaoNetoElemento novoInicio = inicio.getNext();
     
     inicio.setNext(null);
@@ -93,18 +101,17 @@ public class JoaoNetoEstrutura implements ITrabalho01 {
 
   @Override
   public void excluirNoMeio(int posicao) {
-    if (posicao < 0 || posicao > quantidade - 1) return;
-    
+    if (posicao < 1 || posicao > quantidade - 2) return;
+
     JoaoNetoElemento atual = inicio;
     JoaoNetoElemento anterior = inicio;
-    
+      
     for(int i = 0; i < posicao; i++) {
       anterior = atual;
       atual = atual.getNext();
     }
 
     anterior.setNext(atual.getNext());
-
     quantidade--;
   }
 
