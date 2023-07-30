@@ -1,7 +1,7 @@
-package br.mendonca.trabalho02.tads;
+package br.mendonca.trabalho04.tads;
 
 import java.util.Random;
-import br.mendonca.trabalho02.ITAD;
+import br.mendonca.trabalho04.ITAD;
 
 public class JoaoNetoTAD implements ITAD {
 
@@ -13,7 +13,7 @@ public class JoaoNetoTAD implements ITAD {
     Random random = new Random();
     
     String[] nomes = {"Ansellia", "Calypso", "Eulophia", "Ophrys", "Phalaenopsis", "Satyrium"};
-
+    
     this.nome = nomes[random.nextInt(6)] + " " + nomes[random.nextInt(6)] + " " + nomes[random.nextInt(6)];
     this.comprimentoGalho = random.nextDouble(10);
     this.epifita = random.nextBoolean();

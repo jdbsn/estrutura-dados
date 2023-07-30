@@ -1,6 +1,5 @@
 package br.mendonca.trabalho02.estruturas;
 
-
 import br.mendonca.trabalho02.ITAD;
 import br.mendonca.trabalho02.ITrabalho02;
 import br.mendonca.trabalho02.elementos.JoaoNetoElemento;

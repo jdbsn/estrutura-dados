@@ -1,7 +1,7 @@
-package br.mendonca.trabalho02.tads;
+package br.mendonca.trabalho05.tads;
 
 import java.util.Random;
-import br.mendonca.trabalho02.ITAD;
+import br.mendonca.trabalho05.ITAD;
 
 public class JoaoNetoTAD implements ITAD {
 

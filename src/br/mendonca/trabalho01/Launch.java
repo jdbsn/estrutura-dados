@@ -18,10 +18,18 @@ public class Launch {
 	  
 	  System.out.println(estrutura.print());
 	  
-	  for(int i = 0; i < 5; i++) {
+	  for(int i = 0; i < 4; i++) {
+	    estrutura.excluirNoInicio();
       }
 
+	  System.out.println("dd" + estrutura.print());
 	  
+	  estrutura.excluirNoFim();
+	  estrutura.excluirNoFim();
+	  estrutura.excluirNoFim();
+	  estrutura.excluirNoFim();
+	  
+	  System.out.println(estrutura.getQuantidade());
 	  
 //	  JoaoNetoTAD x = new JoaoNetoTAD();
 //	  System.out.println(x.print());

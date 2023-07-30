@@ -10,11 +10,12 @@ public class JoaoNetoTAD implements ITAD {
   private boolean epifita;
   
   public JoaoNetoTAD() {
+    Random random = new Random();
     
     String[] nomes = {"Ansellia", "Calypso", "Eulophia", "Ophrys", "Phalaenopsis", "Satyrium"};
-    Random random = new Random();
+
     this.nome = nomes[random.nextInt(6)] + " " + nomes[random.nextInt(6)] + " " + nomes[random.nextInt(6)];
-    this.comprimentoGalho =random.nextDouble(10);
+    this.comprimentoGalho = random.nextDouble(10);
     this.epifita = random.nextBoolean();
   }
 
