@@ -1,7 +1,7 @@
-package br.mendonca.trabalho04.elementos;
+package br.mendonca.trabalho06.elementos;
 
-import br.mendonca.trabalho04.ITAD;
-import br.mendonca.trabalho04.tads.JoaoNetoTAD;
+import br.mendonca.trabalho06.ITAD;
+import br.mendonca.trabalho06.tads.JoaoNetoTAD;
 
 public class JoaoNetoElemento {
 
