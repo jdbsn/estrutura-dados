@@ -14,7 +14,7 @@ public class JoaoNetoEstrutura implements ITrabalho05 {
   }
   
   @Override
-  public Object getLista() {
+  public Object[] getLista() {
     return pilha;
   }
   
