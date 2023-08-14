@@ -1,10 +1,10 @@
-package br.mendonca.trabalho10.estruturas;
+package br.mendonca.trabalho11.estruturas;
 
-import br.mendonca.trabalho10.ITAD;
-import br.mendonca.trabalho10.ITrabalho10;
-import br.mendonca.trabalho10.tads.JoaoNetoTAD;
+import br.mendonca.trabalho11.ITAD;
+import br.mendonca.trabalho11.ITrabalho11;
+import br.mendonca.trabalho11.tads.JoaoNetoTAD;
 
-public class JoaoNetoEstrutura implements ITrabalho10 {
+public class JoaoNetoEstrutura implements ITrabalho11 {
 
   private JoaoNetoTAD[] lista;
   private int quantidade;
@@ -109,6 +109,14 @@ public class JoaoNetoEstrutura implements ITrabalho10 {
     }
     
     return texto.toString();
+  }
+
+  @Override
+  public void setItem(ITAD tad, int posicao) {
+    if (posicao < 1 || posicao > quantidade - 1) return;
+    
+    lista[posicao] = (JoaoNetoTAD) tad;
+    
   }
 
 }

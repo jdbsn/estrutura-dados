@@ -1,16 +1,17 @@
-package br.mendonca.trabalho01.estrutura;
+package br.mendonca.trabalho12.estruturas;
 
-import br.mendonca.trabalho01.ITAD;
-import br.mendonca.trabalho01.ITrabalho01;
+import br.mendonca.trabalho12.ITAD;
+import br.mendonca.trabalho12.ITrabalho12;
+import br.mendonca.trabalho12.tads.JoaoNetoTAD;
 
-public class JoaoNetoEstrutura implements ITrabalho01 {
-
-  private ITAD[] lista;
+public class JoaoNetoEstrutura implements ITrabalho12 {
+  
+  private JoaoNetoTAD[] lista;
   private int quantidade;
   private int maximo;
 
   public JoaoNetoEstrutura(int maximo) {
-    this.lista = new ITAD[maximo];
+    this.lista = new JoaoNetoTAD[maximo];
     this.maximo = maximo;
     this.quantidade = 0;
   }
@@ -33,7 +34,7 @@ public class JoaoNetoEstrutura implements ITrabalho01 {
       lista[i] = lista[i - 1];
     }
     
-    lista[0] = tad;
+    lista[0] = (JoaoNetoTAD) tad;
     quantidade++;
   }
 
@@ -41,7 +42,7 @@ public class JoaoNetoEstrutura implements ITrabalho01 {
   public void inserirNoFim(ITAD tad) {
     if (quantidade + 1 > maximo) return;
     
-    lista[quantidade] = tad;
+    lista[quantidade] = (JoaoNetoTAD) tad;
     quantidade++;
   }
 
@@ -54,18 +55,22 @@ public class JoaoNetoEstrutura implements ITrabalho01 {
       lista[i] = lista[i-1];
     }
     
-    lista[posicao] = tad;
+    lista[posicao] = (JoaoNetoTAD) tad;
     quantidade++;
   }
   
   @Override
   public void excluirNoFim() {
+    if(quantidade == 0) return;
+    
     lista[quantidade] = null;
     quantidade--;
   }
 
   @Override
   public void excluirNoInicio() {
+    if(quantidade == 0) return;
+    
     for (int i = 0; i < quantidade - 1; i++) {
       lista[i] = lista[i + 1];
     }
@@ -76,6 +81,8 @@ public class JoaoNetoEstrutura implements ITrabalho01 {
 
   @Override
   public void excluirNoMeio(int posicao) {
+    if(quantidade == 0) return;
+    
     if (posicao < 1 || posicao > quantidade - 2) return;
 
     for (int i = posicao; i < quantidade - 1; i++) {
@@ -104,4 +111,11 @@ public class JoaoNetoEstrutura implements ITrabalho01 {
     return texto.toString();
   }
 
+  @Override
+  public void setItem(ITAD tad, int posicao) {
+    if (posicao < 1 || posicao > quantidade - 1) return;
+    
+    lista[posicao] = (JoaoNetoTAD) tad;
+    
+  }
 }

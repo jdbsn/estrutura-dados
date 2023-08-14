@@ -1,17 +1,16 @@
-package br.mendonca.trabalho10.estruturas;
+package br.mendonca.trabalho01.estruturas;
 
-import br.mendonca.trabalho10.ITAD;
-import br.mendonca.trabalho10.ITrabalho10;
-import br.mendonca.trabalho10.tads.JoaoNetoTAD;
+import br.mendonca.trabalho01.ITAD;
+import br.mendonca.trabalho01.ITrabalho01;
 
-public class JoaoNetoEstrutura implements ITrabalho10 {
+public class JoaoNetoEstrutura implements ITrabalho01 {
 
-  private JoaoNetoTAD[] lista;
+  private ITAD[] lista;
   private int quantidade;
   private int maximo;
 
   public JoaoNetoEstrutura(int maximo) {
-    this.lista = new JoaoNetoTAD[maximo];
+    this.lista = new ITAD[maximo];
     this.maximo = maximo;
     this.quantidade = 0;
   }
@@ -34,7 +33,7 @@ public class JoaoNetoEstrutura implements ITrabalho10 {
       lista[i] = lista[i - 1];
     }
     
-    lista[0] = (JoaoNetoTAD) tad;
+    lista[0] = tad;
     quantidade++;
   }
 
@@ -42,7 +41,7 @@ public class JoaoNetoEstrutura implements ITrabalho10 {
   public void inserirNoFim(ITAD tad) {
     if (quantidade + 1 > maximo) return;
     
-    lista[quantidade] = (JoaoNetoTAD) tad;
+    lista[quantidade] = tad;
     quantidade++;
   }
 
@@ -55,22 +54,18 @@ public class JoaoNetoEstrutura implements ITrabalho10 {
       lista[i] = lista[i-1];
     }
     
-    lista[posicao] = (JoaoNetoTAD) tad;
+    lista[posicao] = tad;
     quantidade++;
   }
   
   @Override
   public void excluirNoFim() {
-    if(quantidade == 0) return;
-    
     lista[quantidade] = null;
     quantidade--;
   }
 
   @Override
   public void excluirNoInicio() {
-    if(quantidade == 0) return;
-    
     for (int i = 0; i < quantidade - 1; i++) {
       lista[i] = lista[i + 1];
     }
@@ -81,8 +76,6 @@ public class JoaoNetoEstrutura implements ITrabalho10 {
 
   @Override
   public void excluirNoMeio(int posicao) {
-    if(quantidade == 0) return;
-    
     if (posicao < 1 || posicao > quantidade - 2) return;
 
     for (int i = posicao; i < quantidade - 1; i++) {
