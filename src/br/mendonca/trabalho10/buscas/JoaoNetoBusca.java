@@ -8,13 +8,15 @@ public class JoaoNetoBusca implements IBuscas {
 
   @Override
   public String getAluno() {
-    return "João de Barros e Silva Net";
+    return "João de Barros e Silva Neto";
   }
 
   @Override
   public ITAD linear(ITrabalho10 lista, ITAD tad) {
     for (int i = 0; i < lista.getQuantidade(); i++) {
-      if(lista.getItem(i).getDouble() == tad.getDouble()) return lista.getItem(i);
+      if(lista.getItem(i).getDouble() == tad.getDouble()) {
+        return lista.getItem(i);
+      }
     }
     
     return null;
@@ -45,7 +47,7 @@ public class JoaoNetoBusca implements IBuscas {
         fim = meio - 1;
       } else {
         if(tad.getDouble() > lista.getItem(meio).getDouble()) {
-          fim = meio + 1;
+          inicio = meio + 1;
         } else {
           return tad;
         }

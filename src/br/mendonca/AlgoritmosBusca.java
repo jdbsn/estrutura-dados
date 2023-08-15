@@ -2,14 +2,20 @@ package br.mendonca;
 
 public class AlgoritmosBusca {
 
-  public int buscaLinear(int[] lista, int valor) {
+  public static void main(String[] args) {
+    int[] lista = {1,2,3,4,5,6,7,8};
+    
+    System.out.println(buscaLinear(lista, 4));
+  }
+  
+  public static int buscaLinear(int[] lista, int valor) {
     for (int i = 0; i < lista.length; i++) {
       if(lista[i] == valor) return i;
     }
     return -1;
   }
   
-  public int buscaOrdenada(int[] lista, int valor) {
+  public static int buscaOrdenada(int[] lista, int valor) {
 
     for (int i = 0; i < lista.length; i++) {
       if(valor == lista[i]) {
@@ -22,7 +28,7 @@ public class AlgoritmosBusca {
     return -1;
   }
   
-  public int buscaBinaria(int[] lista, int valor) {
+  public static int buscaBinaria(int[] lista, int valor) {
     int inicio = 0;
     int meio;
     int fim = lista.length - 1;
@@ -33,7 +39,7 @@ public class AlgoritmosBusca {
         fim = meio - 1;
       } else {
         if(valor > lista[meio]) {
-          fim = meio + 1;
+          inicio = meio + 1;
         } else {
           return meio;
         }

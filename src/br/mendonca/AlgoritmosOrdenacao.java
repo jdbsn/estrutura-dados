@@ -9,7 +9,7 @@ public class AlgoritmosOrdenacao {
     
     do {
       continua = 0;
-      for (int i = 0; i < fim; i++) {
+      for (int i = 1; i < fim; i++) {
         if(lista[i] < lista[i-1]) {
           aux = lista[i];
           lista[i] = lista[i-1];

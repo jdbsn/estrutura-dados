@@ -113,9 +113,8 @@ public class JoaoNetoEstrutura implements ITrabalho12 {
 
   @Override
   public void setItem(ITAD tad, int posicao) {
-    if (posicao < 1 || posicao > quantidade - 1) return;
-    
-    lista[posicao] = (JoaoNetoTAD) tad;
-    
+    if (posicao < 0 || posicao > quantidade - 1) return;
+
+    lista[posicao] = (JoaoNetoTAD) tad;    
   }
 }

@@ -19,7 +19,7 @@ public class JoaoNetoSort implements ISort {
     
     do {
       continua = 0;
-      for (int i = 0; i < fim; i++) {
+      for (int i = 1; i < fim; i++) {
         if(lista.getItem(i).getDouble() < lista.getItem(i-1).getDouble()) {
           aux = lista.getItem(i);
           lista.setItem(lista.getItem(i-1), i);
